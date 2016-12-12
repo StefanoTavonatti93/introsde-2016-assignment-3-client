@@ -125,7 +125,8 @@ public class Client {
         print("5","deletePerson("+nervi.getIdPerson()+"): ","result: "+deleteNervi.value);
         
         //Method 6
-        MeasureHistory mh= people.readPersonHistory(ID, "weight");
+        MeasureHistory mh= people.readPersonHistory(ID, "height");
+        print("6","readPersonHistory("+ID+",\"height\"):",Utilities.printMeasureHistory(mh));
         
         //close print writer
         closePrintWriter();

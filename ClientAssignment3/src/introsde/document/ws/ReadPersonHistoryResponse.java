@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="MeasureHistory" type="{http://ws.document.introsde/}measureHistory" minOccurs="0"/>
+ *         &lt;element name="healthProfile-history" type="{http://ws.document.introsde/}measureHistory" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "readPersonHistoryResponse", propOrder = {
-    "measureHistory"
+    "healthProfileHistory"
 })
 public class ReadPersonHistoryResponse {
 
-    @XmlElement(name = "MeasureHistory")
-    protected MeasureHistory measureHistory;
+    @XmlElement(name = "healthProfile-history")
+    protected MeasureHistory healthProfileHistory;
 
     /**
-     * Gets the value of the measureHistory property.
+     * Gets the value of the healthProfileHistory property.
      * 
      * @return
      *     possible object is
      *     {@link MeasureHistory }
      *     
      */
-    public MeasureHistory getMeasureHistory() {
-        return measureHistory;
+    public MeasureHistory getHealthProfileHistory() {
+        return healthProfileHistory;
     }
 
     /**
-     * Sets the value of the measureHistory property.
+     * Sets the value of the healthProfileHistory property.
      * 
      * @param value
      *     allowed object is
      *     {@link MeasureHistory }
      *     
      */
-    public void setMeasureHistory(MeasureHistory value) {
-        this.measureHistory = value;
+    public void setHealthProfileHistory(MeasureHistory value) {
+        this.healthProfileHistory = value;
     }
 
 }

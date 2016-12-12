@@ -5,6 +5,7 @@ import java.util.List;
 
 import introsde.document.ws.HealthProfile;
 import introsde.document.ws.Measure;
+import introsde.document.ws.MeasureHistory;
 import introsde.document.ws.Person;
 
 public class Utilities {
@@ -33,6 +34,20 @@ public class Utilities {
 		while(it.hasNext()){
 			Measure m=it.next();
 			res+="\n\t\t"+m.getMeasureType()+"(mid:"+m.getMid()+ "): "+m.getMeasureValue();
+		}
+		
+		return res;
+	}
+	
+	public static String printMeasureHistory(MeasureHistory mh){
+		String res="";
+		
+		List<Measure> measures=mh.getMeasure();
+		Iterator<Measure> it=measures.iterator();
+		
+		while(it.hasNext()){
+			Measure m=it.next();
+			res+="\n\t"+m.getMeasureType()+"(mid:"+m.getMid()+ "): "+m.getMeasureValue();
 		}
 		
 		return res;

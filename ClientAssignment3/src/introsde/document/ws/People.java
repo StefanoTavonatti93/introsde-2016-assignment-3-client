@@ -114,7 +114,7 @@ public interface People {
      *     returns introsde.document.ws.MeasureHistory
      */
     @WebMethod
-    @WebResult(name = "MeasureHistory", targetNamespace = "")
+    @WebResult(name = "healthProfile-history", targetNamespace = "")
     @RequestWrapper(localName = "readPersonHistory", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.ReadPersonHistory")
     @ResponseWrapper(localName = "readPersonHistoryResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.ReadPersonHistoryResponse")
     @Action(input = "http://ws.document.introsde/People/readPersonHistoryRequest", output = "http://ws.document.introsde/People/readPersonHistoryResponse")

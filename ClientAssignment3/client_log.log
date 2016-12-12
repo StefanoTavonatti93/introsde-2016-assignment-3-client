@@ -1,8 +1,8 @@
 ----------------------------------------------
 Req number: #1: getPersonList()
 	ID: 1
-	Firstname: Paolo
-	Lastname: Bitta
+	Firstname: Paolo316
+	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
 			CurrentHealth:
@@ -18,3 +18,24 @@ Req number: #1: getPersonList()
 				height(mid:103): 10.0
 	---
 	
+----------------------------------------------
+Req number: #2: readPerson(personid):
+	ID: 1
+	Firstname: Paolo316
+	Lastname: Rossi
+	BirthDate: 1995-01-01T00:00:00+01:00
+	Health Profile:
+			CurrentHealth:
+				height(mid:52): 15.0
+				weight(mid:2): 100.0
+----------------------------------------------
+Req number: #3: updatePerson(1):
+new person:
+	ID: 1
+	Firstname: Paolo170
+	Lastname: Rossi
+	BirthDate: 1995-01-01T00:00:00+01:00
+	Health Profile:
+			CurrentHealth:
+				height(mid:52): 15.0
+				weight(mid:2): 100.0

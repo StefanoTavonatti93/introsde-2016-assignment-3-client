@@ -32,7 +32,7 @@ public interface People {
      *     returns introsde.document.ws.Person
      */
     @WebMethod
-    @WebResult(name = "person", targetNamespace = "http://ws.document.introsde/")
+    @WebResult(name = "person", targetNamespace = "")
     @RequestWrapper(localName = "readPerson", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.ReadPerson")
     @ResponseWrapper(localName = "readPersonResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.ReadPersonResponse")
     @Action(input = "http://ws.document.introsde/People/readPersonRequest", output = "http://ws.document.introsde/People/readPersonResponse")
@@ -46,7 +46,7 @@ public interface People {
      *     returns introsde.document.ws.People_Type
      */
     @WebMethod
-    @WebResult(name = "people", targetNamespace = "http://ws.document.introsde/")
+    @WebResult(name = "people", targetNamespace = "")
     @RequestWrapper(localName = "getPeopleList", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.GetPeopleList")
     @ResponseWrapper(localName = "getPeopleListResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.GetPeopleListResponse")
     @Action(input = "http://ws.document.introsde/People/getPeopleListRequest", output = "http://ws.document.introsde/People/getPeopleListResponse")
@@ -64,7 +64,7 @@ public interface People {
     @ResponseWrapper(localName = "createPersonResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.CreatePersonResponse")
     @Action(input = "http://ws.document.introsde/People/createPersonRequest", output = "http://ws.document.introsde/People/createPersonResponse")
     public int createPerson(
-        @WebParam(name = "person", targetNamespace = "http://ws.document.introsde/")
+        @WebParam(name = "person", targetNamespace = "")
         Person person);
 
     /**
@@ -79,7 +79,7 @@ public interface People {
     @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.UpdatePersonResponse")
     @Action(input = "http://ws.document.introsde/People/updatePersonRequest", output = "http://ws.document.introsde/People/updatePersonResponse")
     public int updatePerson(
-        @WebParam(name = "person", targetNamespace = "http://ws.document.introsde/")
+        @WebParam(name = "person", targetNamespace = "")
         Person person);
 
     /**
@@ -109,7 +109,7 @@ public interface People {
     public int updatePersonHealthProfile(
         @WebParam(name = "personId", targetNamespace = "")
         int personId,
-        @WebParam(name = "healthProfile", targetNamespace = "http://ws.document.introsde/")
+        @WebParam(name = "healthProfile", targetNamespace = "")
         HealthProfile healthProfile);
 
     /**
@@ -171,7 +171,7 @@ public interface People {
      *     returns introsde.document.ws.Person
      */
     @WebMethod
-    @WebResult(name = "person", targetNamespace = "http://ws.document.introsde/")
+    @WebResult(name = "person", targetNamespace = "")
     @RequestWrapper(localName = "savePersonMeasure", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.SavePersonMeasure")
     @ResponseWrapper(localName = "savePersonMeasureResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.SavePersonMeasureResponse")
     @Action(input = "http://ws.document.introsde/People/savePersonMeasureRequest", output = "http://ws.document.introsde/People/savePersonMeasureResponse")

@@ -3,7 +3,6 @@ package introsde.document.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -18,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="personId" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element ref="{http://ws.document.introsde/}healthProfile" minOccurs="0"/>
+ *         &lt;element name="healthProfile" type="{http://ws.document.introsde/}healthProfile" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,7 +34,6 @@ import javax.xml.bind.annotation.XmlType;
 public class UpdatePersonHealthProfile {
 
     protected int personId;
-    @XmlElement(namespace = "http://ws.document.introsde/")
     protected HealthProfile healthProfile;
 
     /**

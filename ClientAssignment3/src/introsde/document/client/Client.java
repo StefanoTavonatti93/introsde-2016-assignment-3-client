@@ -8,6 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -61,7 +62,22 @@ public class Client {
         }
         
         print("1", "getPersonList()", req1response);
+        
+        //Method 2
+        Person person=people.readPerson(ID);
+        print("2", "readPerson(personid):", Utilities.printPerson(person));
+        
+        //Method 3
+        //Changing name of first person
+        person.setFirstname("Paolo"+(new Random()).nextInt(500));
+        people.updatePerson(person);
+        
+        person=people.readPerson(person.getIdPerson());
+        
+        print("3", "updatePerson("+person.getIdPerson()+"):\nnew person:", Utilities.printPerson(person));
 		
+        //Method 4
+        
         
         //close print writer
         closePrintWriter();

@@ -3,7 +3,6 @@ package introsde.document.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -21,7 +20,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="birthdate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element ref="{http://ws.document.introsde/}healthProfile" minOccurs="0"/>
+ *         &lt;element name="healthProfile" type="{http://ws.document.introsde/}healthProfile" minOccurs="0"/>
  *         &lt;element name="idPerson" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -45,7 +44,6 @@ public class Person {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar birthdate;
     protected String firstname;
-    @XmlElement(namespace = "http://ws.document.introsde/")
     protected HealthProfile healthProfile;
     protected int idPerson;
     protected String lastname;

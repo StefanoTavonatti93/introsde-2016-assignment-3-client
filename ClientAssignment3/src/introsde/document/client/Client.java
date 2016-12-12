@@ -4,17 +4,32 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
+import java.util.TimeZone;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.Duration;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.namespace.QName;
+import javax.xml.ws.Holder;
 import javax.xml.ws.Service;
 
 import introsde.document.ws.GetPeopleList;
 import introsde.document.ws.GetPeopleListResponse;
+import introsde.document.ws.MeasureHistory;
 import introsde.document.ws.People;
 import introsde.document.ws.Person;
 import intrsde.utilities.Utilities;
@@ -27,6 +42,7 @@ public class Client {
 	 * ID of the first person
 	 */
 	private int ID;
+	private DateFormat format=new SimpleDateFormat("yyyy-MM-dd");
 	
 	public Client(String args[]) throws MalformedURLException{
 		
@@ -70,14 +86,46 @@ public class Client {
         //Method 3
         //Changing name of first person
         person.setFirstname("Paolo"+(new Random()).nextInt(500));
-        people.updatePerson(person);
+        Holder<Person> personHolder=new Holder<Person>(person);
+        people.updatePerson(personHolder);
         
-        person=people.readPerson(person.getIdPerson());
+        person= personHolder.value;
         
         print("3", "updatePerson("+person.getIdPerson()+"):\nnew person:", Utilities.printPerson(person));
 		
         //Method 4
         
+        //creating new person
+        Person nervi=new Person();
+        nervi.setFirstname("Luca");
+        nervi.setLastname("Nervi");
+        try {
+        	GregorianCalendar gc=new GregorianCalendar();
+        	gc.setTime(format.parse("1965-01-05"));
+			nervi.setBirthdate(DatatypeFactory.newInstance().newXMLGregorianCalendar(gc));
+        } catch (DatatypeConfigurationException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        Holder<Person> newPerson=new Holder<>(nervi);
+        
+        people.createPerson(newPerson);
+        
+        print("4","createPerson(): ",Utilities.printPerson(newPerson.value));
+        
+        nervi=newPerson.value;
+        
+        //Method 5 delete person
+        Holder<Integer> deleteNervi=new Holder<>(nervi.getIdPerson());
+        people.deletePerson(deleteNervi);
+        
+        print("5","deletePerson("+nervi.getIdPerson()+"): ","result: "+deleteNervi.value);
+        
+        //Method 6
+        MeasureHistory mh= people.readPersonHistory(ID, "weight");
         
         //close print writer
         closePrintWriter();

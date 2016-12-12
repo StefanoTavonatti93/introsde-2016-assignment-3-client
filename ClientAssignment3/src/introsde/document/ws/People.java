@@ -55,32 +55,26 @@ public interface People {
     /**
      * 
      * @param person
-     * @return
-     *     returns int
      */
     @WebMethod
-    @WebResult(name = "personId", targetNamespace = "")
     @RequestWrapper(localName = "createPerson", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.CreatePerson")
     @ResponseWrapper(localName = "createPersonResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.CreatePersonResponse")
     @Action(input = "http://ws.document.introsde/People/createPersonRequest", output = "http://ws.document.introsde/People/createPersonResponse")
-    public int createPerson(
-        @WebParam(name = "person", targetNamespace = "")
-        Person person);
+    public void createPerson(
+        @WebParam(name = "person", targetNamespace = "", mode = WebParam.Mode.INOUT)
+        Holder<Person> person);
 
     /**
      * 
      * @param person
-     * @return
-     *     returns int
      */
     @WebMethod
-    @WebResult(name = "personId", targetNamespace = "")
     @RequestWrapper(localName = "updatePerson", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.UpdatePerson")
     @ResponseWrapper(localName = "updatePersonResponse", targetNamespace = "http://ws.document.introsde/", className = "introsde.document.ws.UpdatePersonResponse")
     @Action(input = "http://ws.document.introsde/People/updatePersonRequest", output = "http://ws.document.introsde/People/updatePersonResponse")
-    public int updatePerson(
-        @WebParam(name = "person", targetNamespace = "")
-        Person person);
+    public void updatePerson(
+        @WebParam(name = "person", targetNamespace = "", mode = WebParam.Mode.INOUT)
+        Holder<Person> person);
 
     /**
      * 

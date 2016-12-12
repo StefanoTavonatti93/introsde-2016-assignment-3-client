@@ -1,7 +1,7 @@
 ----------------------------------------------
 Req number: #1: getPersonList()
 	ID: 1
-	Firstname: Paolo316
+	Firstname: Paolo395
 	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
@@ -21,7 +21,7 @@ Req number: #1: getPersonList()
 ----------------------------------------------
 Req number: #2: readPerson(personid):
 	ID: 1
-	Firstname: Paolo316
+	Firstname: Paolo395
 	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
@@ -32,10 +32,20 @@ Req number: #2: readPerson(personid):
 Req number: #3: updatePerson(1):
 new person:
 	ID: 1
-	Firstname: Paolo170
+	Firstname: Paolo343
 	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
+----------------------------------------------
+Req number: #4: createPerson(): 
+	ID: 153
+	Firstname: Luca
+	Lastname: Nervi
+	BirthDate: 1965-01-05T00:00:00+01:00
+	
+----------------------------------------------
+Req number: #5: deletePerson(153): 
+	result: 0

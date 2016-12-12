@@ -29,7 +29,9 @@ import javax.xml.ws.Service;
 
 import introsde.document.ws.GetPeopleList;
 import introsde.document.ws.GetPeopleListResponse;
+import introsde.document.ws.Measure;
 import introsde.document.ws.MeasureHistory;
+import introsde.document.ws.MeasureTypeList;
 import introsde.document.ws.People;
 import introsde.document.ws.Person;
 import intrsde.utilities.Utilities;
@@ -128,6 +130,24 @@ public class Client {
         MeasureHistory mh= people.readPersonHistory(ID, "height");
         print("6","readPersonHistory("+ID+",\"height\"):",Utilities.printMeasureHistory(mh));
         
+        //Method 7
+        MeasureTypeList measureTypeList= people.readMeasureTypes();
+        List<String> types=measureTypeList.getMeasureType();
+        Iterator<String> type=types.iterator();
+        
+        String typesString="";
+        
+        while(type.hasNext()){
+        	String t=type.next();
+        	typesString+=t+"\n";
+        }
+        
+        print("7", "getMeasureType", typesString);
+        
+        //Method 8
+        Measure mes= people.readPersonMeasure(ID, "height", mh.getMeasure().get(0).getMid());
+        
+        print("8", "readPersonMeasure("+ID+", \"height\","+mh.getMeasure().get(0).getMid()+")","\n\t\t"+mes.getMeasureType()+"(mid:"+mes.getMid()+ "): "+mes.getMeasureValue());
         //close print writer
         closePrintWriter();
 	}
@@ -152,7 +172,7 @@ public class Client {
 	
 	private void print(String num,String req, String response){
 		String res="----------------------------------------------\n";
-		res+="Req number: #"+num+": "+req;
+		res+="Request number: #"+num+": "+req;
 		res+="\n\t"+response.replaceAll("\n", "\n\t");
 		
 		printOnFile(res);

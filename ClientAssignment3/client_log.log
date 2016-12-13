@@ -1,19 +1,19 @@
 ----------------------------------------------
 Request number: #1: getPersonList()
 	ID: 1
-	Firstname: Paolo383
+	Firstname: Paolo130
 	Lastname: Bitta
-	BirthDate: 1995-01-01T00:00:00+01:00
+	BirthDate: 1994-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
-				steps(mid:314): 27.0
+				steps(mid:352): 27.0
 	---
 	ID: 101
 	Firstname: Paolo
 	Lastname: Rossi
-	BirthDate: 1995-01-01T00:00:00+01:00
+	BirthDate: 1994-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
 				height(mid:103): 10.0
@@ -22,40 +22,40 @@ Request number: #1: getPersonList()
 ----------------------------------------------
 Request number: #2: readPerson(personid):
 	ID: 1
-	Firstname: Paolo383
+	Firstname: Paolo130
 	Lastname: Bitta
-	BirthDate: 1995-01-01T00:00:00+01:00
+	BirthDate: 1994-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
-				steps(mid:314): 27.0
+				steps(mid:352): 27.0
 ----------------------------------------------
 Request number: #3: updatePerson(1):
 new person:
 	ID: 1
-	Firstname: Paolo471
+	Firstname: Paolo161
 	Lastname: Bitta
-	BirthDate: 1995-01-01T00:00:00+01:00
+	BirthDate: 1994-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
-				steps(mid:314): 27.0
+				steps(mid:352): 27.0
 ----------------------------------------------
 Request number: #4: createPerson(): 
-	ID: 315
+	ID: 353
 	Firstname: Luca
 	Lastname: Nervi
-	BirthDate: 1965-01-05T00:00:00+01:00
+	BirthDate: 1965-01-04T23:00:00Z
 	
 ----------------------------------------------
-Request number: #5: deletePerson(315): 
+Request number: #5: deletePerson(353): 
 	result: 0
 ----------------------------------------------
 Request number: #6: readPersonHistory(1,"height"):
 	
-		height(mid:51): 49.0
+		height(mid:51): 33.0
 		height(mid:52): 15.0
 ----------------------------------------------
 Request number: #7: getMeasureType
@@ -67,19 +67,19 @@ Request number: #7: getMeasureType
 ----------------------------------------------
 Request number: #8: readPersonMeasure(1, "height",51)
 	
-			height(mid:51): 49.0
+			height(mid:51): 33.0
 ----------------------------------------------
 Request number: #9: savePersonMeasure(1,m)
 	ID: 1
-	Firstname: Paolo471
+	Firstname: Paolo161
 	Lastname: Bitta
-	BirthDate: 1995-01-01T00:00:00+01:00
+	BirthDate: 1994-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
-				steps(mid:316): 27.0
+				steps(mid:354): 27.0
 ----------------------------------------------
 Request number: #10: updatePersonMeasure(1,measure)
 	
-	height(mid:51): 5.0
+	height(mid:51): 36.0

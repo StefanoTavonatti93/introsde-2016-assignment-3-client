@@ -48,8 +48,8 @@ public class Client {
 	
 	public Client(String args[]) throws MalformedURLException{
 		
-		String urlStr="http://127.0.1.1:6902/ws/people?wsdl";
-		//String urlStr="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl";
+		//String urlStr="http://127.0.1.1:6902/ws/people?wsdl";
+		String urlStr="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl";
 		
 		if(args.length>0)
 			urlStr=args[0];

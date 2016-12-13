@@ -23,3 +23,8 @@ In order to run the client with my server as a target type the following command
 ```shell
 ant execute.client
 ```
+
+##Log files
+- **client_SIMONE.log**: this file contains the log of an execution on Simone's server;
+- **client_STEFANO.log**: this file conatain the result of an execution of my server;
+- **client_log.log**: this file contains the result of the last execution of the client.

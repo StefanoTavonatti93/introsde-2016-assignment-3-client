@@ -117,7 +117,7 @@
             </java>
         </target>
         <target name="execute.client" depends="install">
-            <echo message="ant execute.client introsde.document.client.PeopleClient in ${build.dir}" />
+            <echo message="ant execute.client introsde.document.client.Client in ${build.dir}" />
             <java classname="introsde.document.client.Client" classpath="${build.dir}" fork="true">
                 <arg value="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl" />
                 <classpath>
@@ -131,7 +131,7 @@
         </target>
     	
     	<target name="execute.client.simone" depends="install">
-    	            <echo message="ant execute.client introsde.document.client.PeopleClient in ${build.dir}" />
+    	            <echo message="ant execute.client.simone introsde.document.client.Client in ${build.dir}" />
     	            <java classname="introsde.document.client.Client" classpath="${build.dir}" fork="true">
     	                <arg value="https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl" />
     	                <classpath>

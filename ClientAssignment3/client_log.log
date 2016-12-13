@@ -1,56 +1,8 @@
-Server URL: https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl
+Server URL: https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl
 
 ----------------------------------------------
 Request number: #1: getPersonList()
 	ID: 1
-	Firstname: Paolo911
-	Lastname: Bitta
-	BirthDate: 1994-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-				height(mid:431): 27.0
-				weight(mid:2): 250.0
-				steps(mid:432): 27.0
-	---
-	ID: 101
-	Firstname: Paolo
-	Lastname: Rossi
-	BirthDate: 1994-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-				height(mid:103): 10.0
-	---
-	ID: 401
-	Firstname: Silvano
-	Lastname: Rogi
-	BirthDate: 1965-01-04T23:00:00Z
-	
-	---
-	ID: 405
-	Firstname: Silvano
-	Lastname: Rogi
-	BirthDate: 1965-01-04T23:00:00Z
-	
-	---
-	ID: 409
-	Firstname: Silvano
-	Lastname: Rogi
-	BirthDate: 1965-01-04T23:00:00Z
-	
-	---
-	ID: 421
-	Firstname: Silvano
-	Lastname: Rogi
-	BirthDate: 1965-01-04T23:00:00Z
-	
-	---
-	ID: 429
-	Firstname: Silvano
-	Lastname: Rogi
-	BirthDate: 1965-01-04T23:00:00Z
-	
-	---
-	ID: 441
 	Firstname: Silvano
 	Lastname: Rogi
 	BirthDate: 1965-01-04T23:00:00Z
@@ -60,70 +12,54 @@ Request number: #1: getPersonList()
 ----------------------------------------------
 Request number: #2: readPerson(1):
 	ID: 1
-	Firstname: Paolo911
-	Lastname: Bitta
-	BirthDate: 1994-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-				height(mid:431): 27.0
-				weight(mid:2): 250.0
-				steps(mid:432): 27.0
+	Firstname: Silvano
+	Lastname: Rogi
+	BirthDate: 1965-01-04T23:00:00Z
+	
 ----------------------------------------------
 Request number: #3: updatePerson(1):
 new person:
 	ID: 1
-	Firstname: Paolo272
+	Firstname: Paolo445
 	Lastname: Bitta
-	BirthDate: 1994-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-				height(mid:431): 27.0
-				weight(mid:2): 250.0
-				steps(mid:432): 27.0
+	BirthDate: 1965-01-04T23:00:00Z
+	
 ----------------------------------------------
 Request number: #4: createPerson(): 
-	ID: 442
+	ID: 2
 	Firstname: Luca
 	Lastname: Nervi
 	BirthDate: 1965-01-04T23:00:00Z
 	
 ----------------------------------------------
-Request number: #5: deletePerson(442): 
+Request number: #5: deletePerson(2): 
 	result: 0
 ----------------------------------------------
 Request number: #6: readPersonHistory(1,"height"):
 	
-		height(mid:51): 44.0
-		height(mid:52): 15.0
-		height(mid:403): 27.0
-		height(mid:407): 27.0
-		height(mid:411): 27.0
-		height(mid:423): 27.0
-		height(mid:431): 27.0
-		height(mid:443): 27.0
+		height(mid:4): 27.0
 ----------------------------------------------
 Request number: #7: getMeasureType
-	height
 	weight
+	height
 	steps
 	bloodpressure
 	
 ----------------------------------------------
-Request number: #8: readPersonMeasure(1, "height",51)
+Request number: #8: readPersonMeasure(1, "height",4)
 	
-	height(mid:51): 44.0
+	height(mid:4): 27.0
 ----------------------------------------------
 Request number: #9: savePersonMeasure(1,m)
 	ID: 1
-	Firstname: Paolo272
+	Firstname: Paolo445
 	Lastname: Bitta
-	BirthDate: 1994-12-31T23:00:00Z
+	BirthDate: 1965-01-04T23:00:00Z
 	Health Profile:
 			CurrentHealth:
-				height(mid:443): 27.0
-				weight(mid:2): 250.0
-				steps(mid:444): 27.0
+				steps(mid:5): 27.0
+				height(mid:4): 27.0
 ----------------------------------------------
 Request number: #10: updatePersonMeasure(1,measure)
 	
-	height(mid:51): 45.0
+	height(mid:4): 28.0

@@ -148,6 +148,27 @@ public class Client {
         Measure mes= people.readPersonMeasure(ID, "height", mh.getMeasure().get(0).getMid());
         
         print("8", "readPersonMeasure("+ID+", \"height\","+mh.getMeasure().get(0).getMid()+")","\n\t\t"+mes.getMeasureType()+"(mid:"+mes.getMid()+ "): "+mes.getMeasureValue());
+        
+        
+        //Method 9
+        Measure m=new Measure();
+        m.setMeasureValueType("double");
+        m.setMeasureValue(27);
+        m.setMeasureType("steps");
+        
+        try {
+        	GregorianCalendar gc=new GregorianCalendar();
+        	gc.setTime(new Date(System.currentTimeMillis()));
+			m.setDateRegistered(DatatypeFactory.newInstance().newXMLGregorianCalendar(gc));
+        } catch (DatatypeConfigurationException e) {
+			e.printStackTrace();
+		}
+        
+        
+        Person bitta=people.savePersonMeasure(ID, m);
+        print("9","savePersonMeasure("+ID+",m)",Utilities.printPerson(bitta));
+        
+        
         //close print writer
         closePrintWriter();
 	}

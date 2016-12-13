@@ -1,13 +1,14 @@
 ----------------------------------------------
 Request number: #1: getPersonList()
 	ID: 1
-	Firstname: Paolo362
+	Firstname: Paolo393
 	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
+				steps(mid:302): 27.0
 	---
 	ID: 101
 	Firstname: Paolo
@@ -21,33 +22,35 @@ Request number: #1: getPersonList()
 ----------------------------------------------
 Request number: #2: readPerson(personid):
 	ID: 1
-	Firstname: Paolo362
+	Firstname: Paolo393
 	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
+				steps(mid:302): 27.0
 ----------------------------------------------
 Request number: #3: updatePerson(1):
 new person:
 	ID: 1
-	Firstname: Paolo394
+	Firstname: Paolo105
 	Lastname: Rossi
 	BirthDate: 1995-01-01T00:00:00+01:00
 	Health Profile:
 			CurrentHealth:
 				height(mid:52): 15.0
 				weight(mid:2): 100.0
+				steps(mid:302): 27.0
 ----------------------------------------------
 Request number: #4: createPerson(): 
-	ID: 256
+	ID: 303
 	Firstname: Luca
 	Lastname: Nervi
 	BirthDate: 1965-01-05T00:00:00+01:00
 	
 ----------------------------------------------
-Request number: #5: deletePerson(256): 
+Request number: #5: deletePerson(303): 
 	result: 0
 ----------------------------------------------
 Request number: #6: readPersonHistory(1,"height"):
@@ -65,3 +68,14 @@ Request number: #7: getMeasureType
 Request number: #8: readPersonMeasure(1, "height",51)
 	
 			height(mid:51): 10.0
+----------------------------------------------
+Request number: #9: savePersonMeasure(1,m)
+	ID: 1
+	Firstname: Paolo105
+	Lastname: Rossi
+	BirthDate: 1995-01-01T00:00:00+01:00
+	Health Profile:
+			CurrentHealth:
+				height(mid:52): 15.0
+				weight(mid:2): 100.0
+				steps(mid:304): 27.0

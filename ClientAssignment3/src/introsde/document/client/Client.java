@@ -102,7 +102,7 @@ public class Client {
         
         //Method 2
         Person person=people.readPerson(ID);
-        print("2", "readPerson(personid):", Utilities.printPerson(person));
+        print("2", "readPerson("+ID+"):", Utilities.printPerson(person));
         
         //Method 3
         //Changing name of first person

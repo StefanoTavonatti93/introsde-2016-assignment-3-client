@@ -3,125 +3,60 @@ Server URL: https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl
 ----------------------------------------------
 Request number: #1: getPersonList()
 	ID: 1
-	Firstname: Paolo87
-	Lastname: Bitta
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-				steps(mid:41): 27.0
-				height(mid:40): 13.0
-	---
-	ID: 3
-	Firstname: BruceL
+	Firstname: Bruce
 	Lastname: Lee
 	BirthDate: 1992-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
+				weight(mid:9): 230.0
+				steps(mid:5): 27.0
+				height(mid:4): 31.0
 	---
-	ID: 5
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 7
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 9
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 11
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 13
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 15
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 17
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 19
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 21
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
-	---
-	ID: 23
-	Firstname: BruceL
-	Lastname: Lee
-	BirthDate: 1992-12-31T23:00:00Z
-	Health Profile:
-			CurrentHealth:
+	ID: 10
+	Firstname: Silvano
+	Lastname: Rogi
+	BirthDate: 1965-01-04T23:00:00Z
+	
 	---
 	
 ----------------------------------------------
-Request number: #2: readPerson(personid):
+Request number: #2: readPerson(1):
 	ID: 1
-	Firstname: Paolo87
-	Lastname: Bitta
+	Firstname: Bruce
+	Lastname: Lee
 	BirthDate: 1992-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
-				steps(mid:41): 27.0
-				height(mid:40): 13.0
+				weight(mid:9): 230.0
+				steps(mid:5): 27.0
+				height(mid:4): 31.0
 ----------------------------------------------
 Request number: #3: updatePerson(1):
 new person:
 	ID: 1
-	Firstname: Paolo447
+	Firstname: Paolo248
 	Lastname: Bitta
 	BirthDate: 1992-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
+				weight(mid:9): 230.0
+				steps(mid:5): 27.0
+				height(mid:4): 31.0
 ----------------------------------------------
 Request number: #4: createPerson(): 
-	ID: 43
+	ID: 11
 	Firstname: Luca
 	Lastname: Nervi
 	BirthDate: 1965-01-04T23:00:00Z
 	
 ----------------------------------------------
-Request number: #5: deletePerson(43): 
+Request number: #5: deletePerson(11): 
 	result: 0
 ----------------------------------------------
 Request number: #6: readPersonHistory(1,"height"):
 	
-		height(mid:44): 27.0
+		height(mid:4): 31.0
+		height(mid:12): 27.0
 ----------------------------------------------
 Request number: #7: getMeasureType
 	weight
@@ -130,20 +65,21 @@ Request number: #7: getMeasureType
 	bloodpressure
 	
 ----------------------------------------------
-Request number: #8: readPersonMeasure(1, "height",44)
+Request number: #8: readPersonMeasure(1, "height",4)
 	
-	height(mid:44): 27.0
+	height(mid:4): 31.0
 ----------------------------------------------
 Request number: #9: savePersonMeasure(1,m)
 	ID: 1
-	Firstname: Paolo447
+	Firstname: Paolo248
 	Lastname: Bitta
 	BirthDate: 1992-12-31T23:00:00Z
 	Health Profile:
 			CurrentHealth:
-				steps(mid:45): 27.0
-				height(mid:44): 27.0
+				steps(mid:13): 27.0
+				height(mid:12): 27.0
+				weight(mid:9): 230.0
 ----------------------------------------------
 Request number: #10: updatePersonMeasure(1,measure)
 	
-	height(mid:44): 11.0
+	height(mid:4): 28.0

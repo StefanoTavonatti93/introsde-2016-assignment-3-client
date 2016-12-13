@@ -6,6 +6,11 @@ import java.util.List;
 import introsde.assignment.soap.*;
 public class Utilities {
 
+	/**
+	 * print a person in a formatted way
+	 * @param p
+	 * @return
+	 */
 	public static String printPerson(Person p){
 		String res="";
 		
@@ -20,6 +25,11 @@ public class Utilities {
 		return res;
 	}
 	
+	/**
+	 * print an health profile in a formatted way
+	 * @param hp
+	 * @return
+	 */
 	public static String printHealthProfile(HealthProfile hp){
 		String res="Health Profile:\n\tCurrentHealth:";
 		
@@ -35,6 +45,11 @@ public class Utilities {
 		return res;
 	}
 	
+	/**
+	 * print a measure in a formatted way
+	 * @param mh
+	 * @return
+	 */
 	public static String printMeasureHistory(MeasureHistory mh){
 		String res="";
 		

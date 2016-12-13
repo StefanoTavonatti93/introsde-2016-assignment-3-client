@@ -46,6 +46,7 @@ public class Client {
 		//String urlStr="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl";
 		String urlStr="https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl";
 		
+		/* if the user specifies an url in the first argument use the user's url*/
 		if(args.length>0)
 			urlStr=args[0];
 		
@@ -218,6 +219,9 @@ public class Client {
         closePrintWriter();
 	}
 	
+	/**
+	 * Initialize the PrintWriter for the PrintWriter
+	 */
 	private void initializePrintWriter(){
 		try {
 			out= new PrintWriter(new FileOutputStream(new File("client_log.log")));
@@ -227,6 +231,9 @@ public class Client {
 		}
 	}
 	
+	/**
+	 * flushes the buffer and closes the Printwriter
+	 */
 	private void closePrintWriter(){
 		
 		if(out==null)
@@ -236,15 +243,25 @@ public class Client {
 		out.close();
 	}
 	
+	/**
+	 * Print the request and response in a formatted way
+	 * @param num
+	 * @param req
+	 * @param response
+	 */
 	private void print(String num,String req, String response){
 		String res="----------------------------------------------\n";
 		res+="Request number: #"+num+": "+req;
 		res+="\n\t"+response.replaceAll("\n", "\n\t");
 		
-		printOnFile(res);
-		printOnScreen(res);
+		printOnFile(res); //print on file
+		printOnScreen(res);//print on console
 	}
 	
+	/**
+	 * Print a string on the log file
+	 * @param str string to print
+	 */
 	private void printOnFile(String str){
 		if(out==null){
 			return;
@@ -253,6 +270,10 @@ public class Client {
 		out.println(str);
 	}
 	
+	/**
+	 * print a string on the console
+	 * @param str
+	 */
 	private void printOnScreen(String str){
 		System.out.println(str);
 	}

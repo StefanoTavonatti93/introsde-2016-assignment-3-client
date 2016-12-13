@@ -43,8 +43,8 @@ public class Client {
 	public Client(String args[]) throws MalformedURLException{
 		
 		//String urlStr="http://127.0.1.1:6902/ws/people?wsdl";
-		String urlStr="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl";
-		//String urlStr="https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl";
+		//String urlStr="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl";
+		String urlStr="https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl";
 		
 		if(args.length>0)
 			urlStr=args[0];
@@ -127,6 +127,23 @@ public class Client {
         print("5","deletePerson("+nervi.getIdPerson()+"): ","result: "+deleteNervi.value);
         
         //Method 6
+        
+        //insert a mesure before asking for history
+        Measure toAdd=new Measure();
+        toAdd.setMeasureType("height");
+        toAdd.setMeasureValueType("double");
+        toAdd.setMeasureValue(27);
+        
+        try {
+        	GregorianCalendar gc=new GregorianCalendar();
+        	gc.setTime(new Date(System.currentTimeMillis()));
+        	toAdd.setDateRegistered(DatatypeFactory.newInstance().newXMLGregorianCalendar(gc));
+        } catch (DatatypeConfigurationException e) {
+			e.printStackTrace();
+		}
+        people.savePersonMeasure(ID, toAdd);
+       
+        //read measure history
         MeasureHistory mh= people.readPersonHistory(ID, "height");
         print("6","readPersonHistory("+ID+",\"height\"):",Utilities.printMeasureHistory(mh));
         
@@ -145,9 +162,9 @@ public class Client {
         print("7", "getMeasureType", typesString);
         
         //Method 8
-        Measure mes= people.readPersonMeasure(ID, "height", mh.getMeasure().get(0).getMid());
+        Measure mes= people.readPersonMeasure(ID, mh.getMeasure().get(0).getMeasureType(), mh.getMeasure().get(0).getMid());
         
-        print("8", "readPersonMeasure("+ID+", \"height\","+mh.getMeasure().get(0).getMid()+")","\n\t\t"+mes.getMeasureType()+"(mid:"+mes.getMid()+ "): "+mes.getMeasureValue());
+        print("8", "readPersonMeasure("+ID+", \"height\","+mh.getMeasure().get(0).getMid()+")",Utilities.printMeasure(mes));
         
         
         //Method 9

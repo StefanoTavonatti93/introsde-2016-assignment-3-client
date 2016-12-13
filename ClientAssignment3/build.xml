@@ -119,7 +119,7 @@
         <target name="execute.client" depends="install">
             <echo message="ant execute.client introsde.document.client.PeopleClient in ${build.dir}" />
             <java classname="introsde.document.client.Client" classpath="${build.dir}" fork="true">
-                <!--<arg value="$JAVA_OPTS  -cp" />-->
+                <arg value="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl" />
                 <classpath>
                     <path location="build" />
                     <fileset dir="lib">
@@ -129,6 +129,21 @@
                 </classpath>
             </java>
         </target>
+    	
+    	<target name="execute.client.simone" depends="install">
+    	            <echo message="ant execute.client introsde.document.client.PeopleClient in ${build.dir}" />
+    	            <java classname="introsde.document.client.Client" classpath="${build.dir}" fork="true">
+    	                <arg value="https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl" />
+    	                <classpath>
+    	                    <path location="build" />
+    	                    <fileset dir="lib">
+    	                        <include name="**/*.jar" />
+    	                        <include name="*.jar" />
+    	                    </fileset>
+    	                </classpath>
+    	            </java>
+    	        </target>
+    	
         <!-- Run the JUnit Tests -->
         <!-- Output is XML, could also be plain-->
         <target name="junit">

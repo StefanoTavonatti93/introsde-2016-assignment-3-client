@@ -50,6 +50,9 @@ public class Utilities {
 	}
 	
 	public static String printMeasure(Measure m){
+		if(m==null)
+			return "";
+		
 		return "\n"+m.getMeasureType()+"(mid:"+m.getMid()+ "): "+m.getMeasureValue();
 	}
 }

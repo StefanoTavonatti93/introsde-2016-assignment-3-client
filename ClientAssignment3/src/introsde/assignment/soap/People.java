@@ -43,14 +43,14 @@ public interface People {
     /**
      * 
      * @return
-     *     returns introsde.assignment.soap.People_Type
+     *     returns introsde.assignment.soap.PeopleList
      */
     @WebMethod
     @WebResult(name = "people", targetNamespace = "")
-    @RequestWrapper(localName = "getPeopleList", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.GetPeopleList")
-    @ResponseWrapper(localName = "getPeopleListResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.GetPeopleListResponse")
-    @Action(input = "http://soap.assignment.introsde/People/getPeopleListRequest", output = "http://soap.assignment.introsde/People/getPeopleListResponse")
-    public People_Type getPeopleList();
+    @RequestWrapper(localName = "readPersonList", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonList")
+    @ResponseWrapper(localName = "readPersonListResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonListResponse")
+    @Action(input = "http://soap.assignment.introsde/People/readPersonListRequest", output = "http://soap.assignment.introsde/People/readPersonListResponse")
+    public PeopleList readPersonList();
 
     /**
      * 
@@ -91,24 +91,6 @@ public interface People {
     /**
      * 
      * @param personId
-     * @param healthProfile
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(name = "hpId", targetNamespace = "")
-    @RequestWrapper(localName = "updatePersonHealthProfile", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.UpdatePersonHealthProfile")
-    @ResponseWrapper(localName = "updatePersonHealthProfileResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.UpdatePersonHealthProfileResponse")
-    @Action(input = "http://soap.assignment.introsde/People/updatePersonHealthProfileRequest", output = "http://soap.assignment.introsde/People/updatePersonHealthProfileResponse")
-    public int updatePersonHealthProfile(
-        @WebParam(name = "personId", targetNamespace = "")
-        int personId,
-        @WebParam(name = "healthProfile", targetNamespace = "")
-        HealthProfile healthProfile);
-
-    /**
-     * 
-     * @param personId
      * @param measureType
      * @return
      *     returns introsde.assignment.soap.MeasureHistory
@@ -130,7 +112,7 @@ public interface People {
      *     returns introsde.assignment.soap.MeasureTypeList
      */
     @WebMethod
-    @WebResult(name = "MeasureTypes", targetNamespace = "")
+    @WebResult(name = "measureTypes", targetNamespace = "")
     @RequestWrapper(localName = "readMeasureTypes", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadMeasureTypes")
     @ResponseWrapper(localName = "readMeasureTypesResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadMeasureTypesResponse")
     @Action(input = "http://soap.assignment.introsde/People/readMeasureTypesRequest", output = "http://soap.assignment.introsde/People/readMeasureTypesResponse")
@@ -139,7 +121,7 @@ public interface People {
     /**
      * 
      * @param mid
-     * @param id
+     * @param personId
      * @param measureType
      * @return
      *     returns introsde.assignment.soap.Measure
@@ -150,8 +132,8 @@ public interface People {
     @ResponseWrapper(localName = "readPersonMeasureResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.ReadPersonMeasureResponse")
     @Action(input = "http://soap.assignment.introsde/People/readPersonMeasureRequest", output = "http://soap.assignment.introsde/People/readPersonMeasureResponse")
     public Measure readPersonMeasure(
-        @WebParam(name = "id", targetNamespace = "")
-        int id,
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId,
         @WebParam(name = "measureType", targetNamespace = "")
         String measureType,
         @WebParam(name = "mid", targetNamespace = "")
@@ -159,8 +141,8 @@ public interface People {
 
     /**
      * 
-     * @param id
-     * @param m
+     * @param measure
+     * @param personId
      * @return
      *     returns introsde.assignment.soap.Person
      */
@@ -170,10 +152,10 @@ public interface People {
     @ResponseWrapper(localName = "savePersonMeasureResponse", targetNamespace = "http://soap.assignment.introsde/", className = "introsde.assignment.soap.SavePersonMeasureResponse")
     @Action(input = "http://soap.assignment.introsde/People/savePersonMeasureRequest", output = "http://soap.assignment.introsde/People/savePersonMeasureResponse")
     public Person savePersonMeasure(
-        @WebParam(name = "id", targetNamespace = "")
-        int id,
-        @WebParam(name = "m", targetNamespace = "")
-        Measure m);
+        @WebParam(name = "personId", targetNamespace = "")
+        int personId,
+        @WebParam(name = "measure", targetNamespace = "")
+        Measure measure);
 
     /**
      * 

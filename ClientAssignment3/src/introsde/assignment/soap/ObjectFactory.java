@@ -26,8 +26,9 @@ public class ObjectFactory {
 
     private final static QName _UpdatePersonMeasureResponse_QNAME = new QName("http://soap.assignment.introsde/", "updatePersonMeasureResponse");
     private final static QName _DeletePersonResponse_QNAME = new QName("http://soap.assignment.introsde/", "deletePersonResponse");
+    private final static QName _ReadPersonListResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonListResponse");
+    private final static QName _ReadPersonList_QNAME = new QName("http://soap.assignment.introsde/", "readPersonList");
     private final static QName _HealthProfile_QNAME = new QName("http://soap.assignment.introsde/", "healthProfile");
-    private final static QName _UpdatePersonHealthProfileResponse_QNAME = new QName("http://soap.assignment.introsde/", "updatePersonHealthProfileResponse");
     private final static QName _ReadMeasureTypesResponse_QNAME = new QName("http://soap.assignment.introsde/", "readMeasureTypesResponse");
     private final static QName _ReadPersonResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonResponse");
     private final static QName _ReadPersonHistory_QNAME = new QName("http://soap.assignment.introsde/", "readPersonHistory");
@@ -35,10 +36,7 @@ public class ObjectFactory {
     private final static QName _ReadPersonHistoryResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonHistoryResponse");
     private final static QName _Person_QNAME = new QName("http://soap.assignment.introsde/", "person");
     private final static QName _ReadPerson_QNAME = new QName("http://soap.assignment.introsde/", "readPerson");
-    private final static QName _GetPeopleListResponse_QNAME = new QName("http://soap.assignment.introsde/", "getPeopleListResponse");
     private final static QName _ReadPersonMeasure_QNAME = new QName("http://soap.assignment.introsde/", "readPersonMeasure");
-    private final static QName _UpdatePersonHealthProfile_QNAME = new QName("http://soap.assignment.introsde/", "updatePersonHealthProfile");
-    private final static QName _GetPeopleList_QNAME = new QName("http://soap.assignment.introsde/", "getPeopleList");
     private final static QName _UpdatePerson_QNAME = new QName("http://soap.assignment.introsde/", "updatePerson");
     private final static QName _ReadPersonMeasureResponse_QNAME = new QName("http://soap.assignment.introsde/", "readPersonMeasureResponse");
     private final static QName _CreatePersonResponse_QNAME = new QName("http://soap.assignment.introsde/", "createPersonResponse");
@@ -69,11 +67,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdatePersonHealthProfileResponse }
+     * Create an instance of {@link ReadPersonListResponse }
      * 
      */
-    public UpdatePersonHealthProfileResponse createUpdatePersonHealthProfileResponse() {
-        return new UpdatePersonHealthProfileResponse();
+    public ReadPersonListResponse createReadPersonListResponse() {
+        return new ReadPersonListResponse();
     }
 
     /**
@@ -90,6 +88,14 @@ public class ObjectFactory {
      */
     public UpdatePersonMeasureResponse createUpdatePersonMeasureResponse() {
         return new UpdatePersonMeasureResponse();
+    }
+
+    /**
+     * Create an instance of {@link ReadPersonList }
+     * 
+     */
+    public ReadPersonList createReadPersonList() {
+        return new ReadPersonList();
     }
 
     /**
@@ -173,11 +179,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link People_Type }
+     * Create an instance of {@link PeopleList }
      * 
      */
-    public People_Type createPeople_Type() {
-        return new People_Type();
+    public PeopleList createPeopleList() {
+        return new PeopleList();
     }
 
     /**
@@ -221,14 +227,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetPeopleListResponse }
-     * 
-     */
-    public GetPeopleListResponse createGetPeopleListResponse() {
-        return new GetPeopleListResponse();
-    }
-
-    /**
      * Create an instance of {@link Person }
      * 
      */
@@ -242,14 +240,6 @@ public class ObjectFactory {
      */
     public ReadPerson createReadPerson() {
         return new ReadPerson();
-    }
-
-    /**
-     * Create an instance of {@link UpdatePersonHealthProfile }
-     * 
-     */
-    public UpdatePersonHealthProfile createUpdatePersonHealthProfile() {
-        return new UpdatePersonHealthProfile();
     }
 
     /**
@@ -274,14 +264,6 @@ public class ObjectFactory {
      */
     public UpdatePerson createUpdatePerson() {
         return new UpdatePerson();
-    }
-
-    /**
-     * Create an instance of {@link GetPeopleList }
-     * 
-     */
-    public GetPeopleList createGetPeopleList() {
-        return new GetPeopleList();
     }
 
     /**
@@ -311,21 +293,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadPersonListResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "readPersonListResponse")
+    public JAXBElement<ReadPersonListResponse> createReadPersonListResponse(ReadPersonListResponse value) {
+        return new JAXBElement<ReadPersonListResponse>(_ReadPersonListResponse_QNAME, ReadPersonListResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ReadPersonList }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "readPersonList")
+    public JAXBElement<ReadPersonList> createReadPersonList(ReadPersonList value) {
+        return new JAXBElement<ReadPersonList>(_ReadPersonList_QNAME, ReadPersonList.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link HealthProfile }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "healthProfile")
     public JAXBElement<HealthProfile> createHealthProfile(HealthProfile value) {
         return new JAXBElement<HealthProfile>(_HealthProfile_QNAME, HealthProfile.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdatePersonHealthProfileResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "updatePersonHealthProfileResponse")
-    public JAXBElement<UpdatePersonHealthProfileResponse> createUpdatePersonHealthProfileResponse(UpdatePersonHealthProfileResponse value) {
-        return new JAXBElement<UpdatePersonHealthProfileResponse>(_UpdatePersonHealthProfileResponse_QNAME, UpdatePersonHealthProfileResponse.class, null, value);
     }
 
     /**
@@ -392,39 +383,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPeopleListResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "getPeopleListResponse")
-    public JAXBElement<GetPeopleListResponse> createGetPeopleListResponse(GetPeopleListResponse value) {
-        return new JAXBElement<GetPeopleListResponse>(_GetPeopleListResponse_QNAME, GetPeopleListResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ReadPersonMeasure }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "readPersonMeasure")
     public JAXBElement<ReadPersonMeasure> createReadPersonMeasure(ReadPersonMeasure value) {
         return new JAXBElement<ReadPersonMeasure>(_ReadPersonMeasure_QNAME, ReadPersonMeasure.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdatePersonHealthProfile }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "updatePersonHealthProfile")
-    public JAXBElement<UpdatePersonHealthProfile> createUpdatePersonHealthProfile(UpdatePersonHealthProfile value) {
-        return new JAXBElement<UpdatePersonHealthProfile>(_UpdatePersonHealthProfile_QNAME, UpdatePersonHealthProfile.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetPeopleList }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "getPeopleList")
-    public JAXBElement<GetPeopleList> createGetPeopleList(GetPeopleList value) {
-        return new JAXBElement<GetPeopleList>(_GetPeopleList_QNAME, GetPeopleList.class, null, value);
     }
 
     /**
@@ -536,12 +500,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link People_Type }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PeopleList }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://soap.assignment.introsde/", name = "people")
-    public JAXBElement<People_Type> createPeople(People_Type value) {
-        return new JAXBElement<People_Type>(_People_QNAME, People_Type.class, null, value);
+    public JAXBElement<PeopleList> createPeople(PeopleList value) {
+        return new JAXBElement<PeopleList>(_People_QNAME, PeopleList.class, null, value);
     }
 
 }

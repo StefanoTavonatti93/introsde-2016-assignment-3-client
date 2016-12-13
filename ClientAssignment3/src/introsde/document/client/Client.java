@@ -44,6 +44,7 @@ public class Client {
 		
 		//String urlStr="http://127.0.1.1:6902/ws/people?wsdl";
 		String urlStr="https://assignment-3-tavonatti.herokuapp.com/ws/people?wsdl";
+		//String urlStr="https://scalco-introsde-assignment-3.herokuapp.com/ws/people?wsdl";
 		
 		if(args.length>0)
 			urlStr=args[0];
@@ -63,12 +64,12 @@ public class Client {
         
         //Method 1
         People people=service.getPort(People.class);
-        if(people.getPeopleList().getPerson().size()>0)
-        	ID=people.getPeopleList().getPerson().get(0).getIdPerson();
+        if(people.readPersonList().getPerson().size()>0)
+        	ID=people.readPersonList().getPerson().get(0).getIdPerson();
         
         String req1response="";
         
-        List<Person> peopleList=people.getPeopleList().getPerson();
+        List<Person> peopleList=people.readPersonList().getPerson();
         
         Iterator<Person> it=peopleList.iterator();
         

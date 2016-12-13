@@ -55,6 +55,8 @@ public class Client {
         QName qname = new QName("http://soap.assignment.introsde/", "PeopleService");
         Service service = Service.create(url, qname);
         
+        People people=service.getPort(People.class);
+        
         //initialize print writer for the log file
         initializePrintWriter();
         
@@ -63,7 +65,25 @@ public class Client {
         printOnFile("Server URL: "+urlStr+"\n");
         
         //Method 1
-        People people=service.getPort(People.class);
+        
+        //populate DB with one person
+        Person personToAdd=new Person();
+        personToAdd.setFirstname("Silvano");
+        personToAdd.setLastname("Rogi");
+        try {
+        	GregorianCalendar gc=new GregorianCalendar();
+        	gc.setTime(format.parse("1965-01-05"));
+        	personToAdd.setBirthdate(DatatypeFactory.newInstance().newXMLGregorianCalendar(gc));
+        } catch (DatatypeConfigurationException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+        
+        people.createPerson(new Holder<Person>(personToAdd));
+        
+        //get people list
+        
         if(people.readPersonList().getPerson().size()>0)
         	ID=people.readPersonList().getPerson().get(0).getIdPerson();
         

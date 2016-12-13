@@ -3,11 +3,7 @@ package intrsde.utilities;
 import java.util.Iterator;
 import java.util.List;
 
-import introsde.document.ws.HealthProfile;
-import introsde.document.ws.Measure;
-import introsde.document.ws.MeasureHistory;
-import introsde.document.ws.Person;
-
+import introsde.assignment.soap.*;
 public class Utilities {
 
 	public static String printPerson(Person p){

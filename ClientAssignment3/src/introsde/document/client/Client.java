@@ -27,13 +27,7 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Holder;
 import javax.xml.ws.Service;
 
-import introsde.document.ws.GetPeopleList;
-import introsde.document.ws.GetPeopleListResponse;
-import introsde.document.ws.Measure;
-import introsde.document.ws.MeasureHistory;
-import introsde.document.ws.MeasureTypeList;
-import introsde.document.ws.People;
-import introsde.document.ws.Person;
+import introsde.assignment.soap.*;
 import intrsde.utilities.Utilities;
 
 public class Client {
@@ -57,11 +51,15 @@ public class Client {
 		URL url = new URL(urlStr);
         //1st argument service URI, refer to wsdl document above
         //2nd argument is service name, refer to wsdl document above
-        QName qname = new QName("http://ws.document.introsde/", "PeopleService");
+        QName qname = new QName("http://soap.assignment.introsde/", "PeopleService");
         Service service = Service.create(url, qname);
         
         //initialize print writer for the log file
         initializePrintWriter();
+        
+        //print server url
+        printOnScreen("Server URL: "+urlStr+"\n");
+        printOnFile("Server URL: "+urlStr+"\n");
         
         //Method 1
         People people=service.getPort(People.class);

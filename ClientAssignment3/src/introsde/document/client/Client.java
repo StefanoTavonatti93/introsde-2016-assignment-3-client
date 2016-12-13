@@ -88,6 +88,7 @@ public class Client {
         //Method 3
         //Changing name of first person
         person.setFirstname("Paolo"+(new Random()).nextInt(500));
+        person.setLastname("Bitta");
         Holder<Person> personHolder=new Holder<Person>(person);
         people.updatePerson(personHolder);
         
@@ -167,6 +168,14 @@ public class Client {
         
         Person bitta=people.savePersonMeasure(ID, m);
         print("9","savePersonMeasure("+ID+",m)",Utilities.printPerson(bitta));
+        
+        
+        //Method 10
+        mes.setMeasureValue((new Random()).nextInt(50));
+        Holder<Measure> measureUpdate=new Holder<>(mes);
+        people.updatePersonMeasure(ID, measureUpdate);
+        
+        print("10","updatePersonMeasure("+ID+",measure)",Utilities.printMeasure(measureUpdate.value));
         
         
         //close print writer

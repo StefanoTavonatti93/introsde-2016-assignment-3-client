@@ -52,4 +52,8 @@ public class Utilities {
 		
 		return res;
 	}
+	
+	public static String printMeasure(Measure m){
+		return "\n"+m.getMeasureType()+"(mid:"+m.getMid()+ "): "+m.getMeasureValue();
+	}
 }
